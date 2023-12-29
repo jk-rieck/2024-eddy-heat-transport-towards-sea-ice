@@ -1,0 +1,2 @@
+module load gcc/9.3.0
+export MPI_INC_DIR="$EBROOTOPENMPI/include"
