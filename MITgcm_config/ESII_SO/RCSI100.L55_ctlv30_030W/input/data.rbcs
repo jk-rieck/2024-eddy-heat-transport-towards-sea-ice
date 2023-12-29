@@ -1,0 +1,17 @@
+# RBCS package parameters:
+ &RBCS_PARM01
+ rbcsForcingPeriod=2592000.,
+ rbcsForcingCycle=31104000.,
+ useRBCtemp=.TRUE.,
+ useRBCsalt=.TRUE.,
+ tauRelaxT=2592000.,
+ tauRelaxS=2592000.,
+ relaxMaskFile='ESII_SO-RCSI100.L55_ctlv30_030W-restoring_mask_with_sponge.bin',
+               'ESII_SO-RCSI100.L55_ctlv30_030W-restoring_mask_with_sponge.bin',
+ relaxTFile='ESII_SO-RCSI100.L55_ctlv30_030W-woa18_temperature_3D.bin',
+ relaxSFile='ESII_SO-RCSI100.L55_ctlv30_030W-woa18_salinity_3D.bin',
+ &
+
+# RBCS for pTracers (read this namelist only when ptracers pkg is compiled)
+ &RBCS_PARM02
+ &

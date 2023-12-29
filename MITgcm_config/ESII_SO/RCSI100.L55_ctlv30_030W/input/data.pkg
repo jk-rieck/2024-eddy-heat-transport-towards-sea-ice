@@ -1,0 +1,13 @@
+# Packages
+ &PACKAGES
+ useRBCS=.TRUE.,
+ useDiagnostics=.TRUE.,
+ useSEAICE=.TRUE.,
+ useTHSICE=.FALSE.,
+ useEXF=.TRUE.,
+ useCAL=.TRUE.,
+ useKPP=.TRUE.,
+ useLayers=.TRUE.,
+ useSALT_PLUME=.TRUE.,
+#---------------------------------------
+ &

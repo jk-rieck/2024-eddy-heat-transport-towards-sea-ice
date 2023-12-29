@@ -1,0 +1,36 @@
+# SEAICE parameters
+ &SEAICE_PARM01
+ SEAICEpressReplFac=0.,
+ SEAICErestoreUnderIce=.FALSE.,
+ usePW79thermodynamics=.TRUE.,
+ SEAICEuseDYNAMICS=.TRUE.,
+ SEAICE_deltaMin=1.e-10,
+ SEAICEetaZmethod=3,
+# following params based on ungermann17
+ SEAICE_strength=2.299e+04,
+ SEAICE_eccen=1.523,
+ SEAICE_cStar=15.92,
+ SEAICE_dryIceAlb=0.71,
+ SEAICE_wetIceAlb=0.7119,
+ SEAICE_drySnowAlb=0.8556,
+ SEAICE_wetSnowAlb=0.7903,
+ SEAICE_drag=1.657e-03,
+ SEAICE_waterDrag=6.647e-03,
+ HO=0.5649,
+# end of params of ungermann17
+ LSR_ERROR=1.0E-6,
+ SEAICElinearIterMax= 500,
+ SEAICE_OLx=1,
+ SEAICE_OLy=1,
+ SEAICEnonLinIterMax=10,
+ SEAICE_no_Slip=.TRUE.,
+ SEAICEadvSnow=.TRUE.,
+ SEAICEadvSalt=.TRUE.,
+ SEAICEuseFlooding=.TRUE.,
+# SEAICE_multDim=7,
+ SEAICEwriteState   = .TRUE.,
+ SEAICE_monFreq = 2592000.,
+ &
+
+ &SEAICE_PARM03
+ &

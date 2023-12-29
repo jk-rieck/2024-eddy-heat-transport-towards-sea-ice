@@ -1,0 +1,280 @@
+# Diagnostic Package Choices
+#--------------------
+#  dumpAtLast (logical): always write output at the end of simulation (default=F)
+#  diag_mnc   (logical): write to NetCDF files (default=useMNC)
+#--for each output-stream:
+#  fileName(n) : prefix of the output file name (max 80c long) for outp.stream n
+#  frequency(n):< 0 : write snap-shot output every |frequency| seconds
+#               > 0 : write time-average output every frequency seconds
+#  timePhase(n)     : write at time = timePhase + multiple of |frequency|
+#    averagingFreq  : frequency (in s) for periodic averaging interval
+#    averagingPhase : phase     (in s) for periodic averaging interval
+#    repeatCycle    : number of averaging intervals in 1 cycle
+#  levels(:,n) : list of levels to write to file (Notes: declared as REAL)
+#                when this entry is missing, select all common levels of this list
+#  fields(:,n) : list of selected diagnostics fields (8.c) in outp.stream n
+#                (see "available_diagnostics.log" file for the full list of diags)
+#  missing_value(n) : missing value for real-type fields in output file "n"
+#  fileFlags(n)     : specific code (8c string) for output file "n"
+#--------------------
+ &DIAGNOSTICS_LIST
+# write pkg diagnostics output to separate subdirectory
+ diagMdsDir = 'Diags',
+#
+#
+#
+# --- YEARLY OUTPUT 1y --- YEARLY OUTPUT 1y --- YEARLY OUTPUT 1y ---
+###############################################################################
+# 2D diagnostics output average ###############################################
+###############################################################################
+# fields(1:9,1) = 'MXLDEPTH', 'ETAN', 'PHI_SURF', 'sIceLoad',
+#                 'oceQnet',  'oceTAUX', 'oceTAUY',
+#                 'EXFtaux', 'EXFtauy',
+# frequency(1) = 31104000.,
+# levels(1,1) = 1.,
+# filename(1) = '2D_diags_1y',
+###############################################################################
+# 3D diagnostics ##############################################################
+###############################################################################
+# fields(1:7,2) = 'THETA', 'SALT', 'VVEL', 'UVEL', 'WVEL',
+#                 'PHIHYD', 'RHOAnoma',
+# frequency(2) = 31104000.,
+# filename(2) = '3D_diags_1y',
+###############################################################################
+# Advection and diffusion of temperature ######################################
+###############################################################################
+# fields(1:4,3) = 'ADVx_TH', 'ADVy_TH', 'ADVr_TH',
+#                 'DFrI_TH',
+# frequency(3) = 31104000.,
+# filename(3) = 'heat_3D_1y',
+###############################################################################
+# Advection and diffusion of salt #############################################
+###############################################################################
+# fields(1:4,4) = 'ADVx_SLT ', 'ADVy_SLT', 'ADVr_SLT',
+#                 'DFrI_SLT',
+# frequency(4) = 31104000.,
+# filename(4) = 'salt_3D_1y',
+###############################################################################
+# Diagnostics from SEAICE #####################################################
+###############################################################################
+# fields(1:8,5) = 'SIarea', 'SIheff', 'SIuice', 'SIvice',    
+#                  'SIatmQnt', 'SIatmFW', 'SIqnet', 'SIempmr',
+# frequency(5) = 31104000.,
+# filename(5) = 'ice_diags_1y',
+###############################################################################
+# additional diagnostics from SEAICE ##########################################
+############################################################################### 
+ fields(1:7,1) = 'SIqneto', 'SIqneti', 'SIqsw',
+                 'SIaQbOCN', 'SIdHbOCN', 'SIdSbOCN', 'SIdAbOCN',
+ frequency(1) = 31104000.,
+ filename(1) = 'add_ice_diags_1y',
+###############################################################################
+# Diagnostics from KPP ########################################################
+###############################################################################
+# fields(1:4,6) = 'KPPviscA', 'KPPdiffT', 'KPPdiffS', 'KPPghatK',
+# frequency(6) = 31104000.,
+# filename(6) = 'mixing_diags_1y',
+###############################################################################
+# Diagnostics from LAYERS #####################################################
+###############################################################################
+# fields(1:3,7) = 'LaVH1RHO ', 'LaHs1RHO ', 'LaVa1RHO ',
+# frequency(7) = 31104000.,
+# filename(7) = 'layers_diags_1y',
+#
+#
+#
+#
+# --- MONTHLY OUTPUT 1m --- MONTHLY OUTPUT 1m --- MONTHLY OUTPUT 1m ---
+###############################################################################
+# 2D diagnostics output average ###############################################
+###############################################################################
+# fields(1:9,8) = 'MXLDEPTH', 'ETAN', 'PHI_SURF', 'sIceLoad',
+#                 'oceQnet',  'oceTAUX', 'oceTAUY',
+#                 'EXFtaux', 'EXFtauy',
+# frequency(8) = 2592000.,
+# levels(1,8) = 1.,
+# filename(8) = '2D_diags_1m',
+###############################################################################
+# 3D diagnostics ##############################################################
+###############################################################################
+# fields(1:7,9) = 'THETA', 'SALT', 'VVEL', 'UVEL', 'WVEL',
+#                 'PHIHYD', 'RHOAnoma',
+# frequency(9) = 2592000.,
+# filename(9) = '3D_diags_1m',
+###############################################################################
+# Advection and diffusion of temperature ######################################
+###############################################################################
+# fields(1:4,10) = 'ADVx_TH', 'ADVy_TH', 'ADVr_TH',
+#                  'DFrI_TH',
+# frequency(10) = 2592000.,
+# filename(10) = 'heat_3D_1m',
+###############################################################################
+# Advection and diffusion of salt #############################################
+###############################################################################
+# fields(1:4,11) = 'ADVx_SLT', 'ADVy_SLT', 'ADVr_SLT',
+#                  'DFrI_SLT',
+# frequency(11) = 2592000.,
+# filename(11) = 'salt_3D_1m',
+###############################################################################
+# Diagnostics from SEAICE #####################################################
+###############################################################################
+# fields(1:8,12) = 'SIarea', 'SIheff', 'SIuice', 'SIvice',    
+#                  'SIatmQnt', 'SIatmFW', 'SIqnet', 'SIempmr',
+# frequency(12) = 2592000.,
+# filename(12) = 'ice_diags_1m',
+###############################################################################
+# additional diagnostics from SEAICE ##########################################
+############################################################################### 
+ fields(1:7,2) = 'SIqneto', 'SIqneti', 'SIqsw',
+                 'SIaQbOCN', 'SIdHbOCN', 'SIdSbOCN', 'SIdAbOCN',
+ frequency(2) = 2592000.,
+ filename(2) = 'add_ice_diags_1m',
+###############################################################################
+# Diagnostics from KPP ########################################################
+###############################################################################
+# fields(1:4,13) = 'KPPviscA', 'KPPdiffT', 'KPPdiffS', 'KPPghatK',
+# frequency(13) = 2592000.,
+# filename(13) = 'mixing_diags_1m',
+###############################################################################
+# Diagnostics from LAYERS #####################################################
+###############################################################################
+# fields(1:3,14) = 'LaVH1RHO ', 'LaHs1RHO ', 'LaVa1RHO ',
+# frequency(14) = 2592000.,
+# filename(14) = 'layers_diags_1m',
+##
+##
+##
+##
+## --- 5-daily OUTPUT 5d --- 5-daily OUTPUT 5d --- 5-daily OUTPUT 5d ---
+################################################################################
+## 2D diagnostics output average ###############################################
+################################################################################
+# fields(1:14,15) = 'MXLDEPTH', 'ETAN', 'PHI_SURF', 'sIceLoad',
+#                  'oceQnet',  'oceTAUX', 'oceTAUY',
+#                  'EXFtaux', 'EXFtauy',
+#		  'EXFhs', 'EXFhl', 'EXFlwnet', 'EXFswnet',
+#                  'EXFqnet',  
+# frequency(15) = 432000.,
+# levels(1,15) = 1.,
+# filename(15) = '2D_diags_5d',
+################################################################################
+## 3D diagnostics ##############################################################
+################################################################################
+# fields(1:7,16) = 'THETA', 'SALT', 'VVEL', 'UVEL', 'WVEL',
+#                  'PHIHYD', 'RHOAnoma',
+# frequency(16) = 432000.,
+# filename(16) = '3D_diags_5d',
+################################################################################
+## Advection and diffusion of temperature ######################################
+################################################################################
+# fields(1:4,17) = 'ADVx_TH', 'ADVy_TH', 'ADVr_TH',
+#                  'DFrI_TH',
+# frequency(17) = 432000.,
+# filename(17) = 'heat_3D_5d',
+################################################################################
+## Advection and diffusion of salt #############################################
+################################################################################
+# fields(1:4,18) = 'ADVx_SLT ', 'ADVy_SLT', 'ADVr_SLT',
+#                  'DFrI_SLT',
+# frequency(18) = 432000.,
+# filename(18) = 'salt_3D_5d',
+################################################################################
+## Diagnostics from SEAICE #####################################################
+################################################################################
+# fields(1:8,19) = 'SIarea', 'SIheff', 'SIuice', 'SIvice',                        
+#                  'SIatmQnt', 'SIatmFW', 'SIqnet', 'SIempmr',
+# frequency(19) = 432000.,
+# filename(19) = 'ice_diags_5d',
+###############################################################################
+# additional diagnostics from SEAICE ##########################################
+############################################################################### 
+ fields(1:7,3) = 'SIqneto', 'SIqneti', 'SIqsw',
+                 'SIaQbOCN', 'SIdHbOCN', 'SIdSbOCN', 'SIdAbOCN',
+ frequency(3) = 432000.,
+ filename(3) = 'add_ice_diags_5d',
+################################################################################
+## Diagnostics from KPP ########################################################
+################################################################################
+# fields(1:4,20) = 'KPPviscA', 'KPPdiffT', 'KPPdiffS', 'KPPghatK',
+# frequency(20) = 432000.,
+# filename(20) = 'mixing_diags_5d',
+################################################################################
+## Diagnostics from LAYERS #####################################################
+################################################################################
+# fields(1:3,21) = 'LaVH1RHO ', 'LaHs1RHO ', 'LaVa1RHO ',
+# frequency(21) = 432000.,
+# filename(21) = 'layers_diags_5d',
+##
+##
+##
+##
+## --- daily OUTPUT 1d --- daily OUTPUT 1d --- daily OUTPUT 1d ---
+################################################################################
+## 2D diagnostics output average ###############################################
+################################################################################
+ fields(1:1,4) = 'MXLDEPTH',
+ frequency(4) = 86400.,
+ levels(1,4) = 1.,
+ filename(4) = '2D_diags_1d',
+################################################################################
+## 3D diagnostics ##############################################################
+################################################################################
+ fields(1:5,5) = 'THETA', 'SALT', 'VVEL', 'UVEL', 'WVEL',
+ frequency(5) = 86400.,
+ filename(5) = '3D_diags_1d',
+################################################################################
+## Advection and diffusion of temperature ######################################
+################################################################################
+# fields(1:4,3) = 'ADVx_TH', 'ADVy_TH', 'ADVr_TH',
+#                  'DFrI_TH',
+# frequency(3) = 86400.,
+# filename(3) = 'heat_3D_1d',
+################################################################################
+## Advection and diffusion of salt #############################################
+################################################################################
+# fields(1:4,18) = 'ADVx_SLT ', 'ADVy_SLT', 'ADVr_SLT',
+#                  'DFrI_SLT',
+# frequency(18) = 86400.,
+# filename(18) = 'salt_3D_1d',
+################################################################################
+## Diagnostics from SEAICE #####################################################
+################################################################################
+ fields(1:8,6) = 'SIarea',
+ frequency(6) = 86400.,
+ filename(6) = 'ice_diags_1d',
+################################################################################
+## Diagnostics from KPP ########################################################
+################################################################################
+# fields(1:4,20) = 'KPPviscA', 'KPPdiffT', 'KPPdiffS', 'KPPghatK',
+# frequency(20) = 86400.,
+# filename(20) = 'mixing_diags_1d',
+################################################################################
+## Diagnostics from LAYERS #####################################################
+################################################################################
+# fields(1:3,21) = 'LaVH1RHO ', 'LaHs1RHO ', 'LaVa1RHO ',
+# frequency(21) = 86400.,
+# filename(21) = 'layers_diags_1d',
+#
+ &
+#--------------------
+# Parameter for Diagnostics of per level statistics:
+#--------------------
+#  diagSt_mnc (logical): write stat-diags to NetCDF files (default=diag_mnc)
+#  diagSt_regMaskFile : file containing the region-mask to read-in
+#  nSetRegMskFile   : number of region-mask sets within the region-mask file
+#  set_regMask(i)   : region-mask set-index that identifies the region "i"
+#  val_regMask(i)   : region "i" identifier value in the region mask
+#--for each output-stream:
+#  stat_fName(n) : prefix of the output file name (max 80c long) for outp.stream n
+#  stat_freq(n):< 0 : write snap-shot output every |stat_freq| seconds
+#               > 0 : write time-average output every stat_freq seconds
+#  stat_phase(n)    : write at time = stat_phase + multiple of |stat_freq|
+#  stat_region(:,n) : list of "regions" (default: 1 region only=global)
+#  stat_fields(:,n) : list of selected diagnostics fields (8.c) in outp.stream n
+#                (see "available_diagnostics.log" file for the full list of diags)
+#--------------------
+ &DIAG_STATIS_PARMS
+# stat_fields(1:2,1) =  'THETA',
+# stat_freq(1) = 864000.,
+# stat_fName(1) = 'dynStDiag',
+ &

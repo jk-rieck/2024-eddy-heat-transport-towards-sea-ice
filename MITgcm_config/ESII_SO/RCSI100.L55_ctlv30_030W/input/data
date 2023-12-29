@@ -1,0 +1,103 @@
+# Model parameters
+# Continuous equation parameters
+ &PARM01
+# ---------------------
+# I/O parameters
+ readBinaryPrec=32,
+ writeBinaryPrec=32,
+ useSingleCpuIO=.TRUE.,
+# ---------------------
+# activate partial cells
+ hFacMinDr=5.,
+ hFacMin=0.1,
+# ---------------------
+# free surface parameters
+ implicitFreeSurface=.TRUE.,
+ useRealFreshWaterFlux=.TRUE.,
+ exactConserv=.TRUE.,
+# ---------------------
+# Coriolis parameter f0 at 75deg S, so that beta plane
+# is centered at 55deg S
+ f0=-1.405e-4,
+ beta=1.145e-11,
+ selectCoriScheme=1,
+# ---------------------
+# Density and equation of state
+ eosType='JMD95Z',
+ tRef= 55*0.,
+ sRef= 55*34.8,
+ rhoConst=1035.,
+ rhoConstFresh=1000.,
+# ---------------------
+# advection scheme
+ tempAdvScheme=80,
+ saltAdvScheme=80,
+ staggerTimeStep=.TRUE.,
+ vectorInvariantMomentum=.TRUE.,
+# ---------------------
+# Viscosity
+# viscA4 maximum is ~2.6E11 (dt=1200)
+# viscA4 minimum is 6.25E9 (Munk)
+ viscA4=2.6E10,
+ viscAr=1.E-5,
+ implicitViscosity=.TRUE.,
+ bottomDragQuadratic = 5E-2,
+# ---------------------
+# Diffusivity and convection
+ diffKhT=0.,
+ diffKrT=1.E-5,
+ diffKhS=0.,
+ diffKrS=1.E-5,
+ implicitDiffusion=.TRUE.,
+ &
+
+# Elliptic solver parameters
+ &PARM02
+ cg2dTargetResidual=1.E-17,
+ cg2dMaxIters=1000,
+ &
+
+# Time stepping parameters
+ &PARM03
+ deltaT=1200.0,
+ nIter0=7516800,
+ nTimeSteps=259200,
+# nTimeSteps=1296000,
+ pChkptFreq=311040000.,
+ chkptFreq=31104000.,
+ monitorFreq=2592000.,
+# general settings 
+ dumpFreq=0.,
+ dumpInitAndLast=.FALSE.,
+ abEps=0.1,
+ forcing_In_AB=.FALSE.,
+ momDissip_In_AB=.FALSE.,
+# pickupSuff='ckptB',
+ &
+
+# Gridding parameters
+ &PARM04
+ usingCartesianGrid=.TRUE.,
+ delX=240*10.E3,
+ delY=320*10.E3,
+ delR=  2.12950489,   2.4308905 ,   2.77490323,   3.1675587 ,   3.61571496,
+        4.1271872 ,   4.71087665,   5.37691441,   6.13682095,   7.00368101,
+        7.99233291,   9.11956927,  10.40434342,  11.86797199,  13.5343178 ,
+       15.42992871,  17.58409559,  20.02877577,  22.79830608,  25.92880133,
+       29.4571029 ,  33.41911167,  37.8473202 ,  42.7673766 ,  48.19359034,
+       54.12347726,  60.5317637 ,  67.36473409,  74.53630909,  81.92757038,
+       89.39130539,  96.76222993, 103.87196047, 110.56607025, 116.71949717,
+      122.24691006, 127.10620628, 131.29541339, 134.84493639, 137.80768112,
+      140.2493299 , 142.24020421, 143.84931689, 145.14057911, 146.17078598,
+      146.98889983, 147.63617797, 148.14678645, 148.54864422, 148.86433209,
+      149.11196865, 149.30600265, 149.45790119, 149.57673112, 149.66964071,
+ interDiffKr_pCell=.TRUE.,
+ interViscAr_pCell=.TRUE.,
+ &
+
+# I/O datasets
+ &PARM05
+ bathyFile='ESII_SO-RCSI100.L55_ctlv30_030W-bathymetry_shelf.bin',
+ hydrogThetaFile='ESII_SO-RCSI100.L55_ctlv30_030W-woa18_temperature_initial.bin',
+ hydrogSaltFile='ESII_SO-RCSI100.L55_ctlv30_030W-woa18_salinity_initial.bin',
+ &

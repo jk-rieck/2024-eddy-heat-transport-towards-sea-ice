@@ -1,0 +1,6 @@
+ &SALT_PLUME_PARM01
+ SaltPlumeCriterion=0.03,
+ PlumeMethod=5,
+ Npower=0,
+ SPsalFRAC=1.0,
+ &

@@ -1,0 +1,80 @@
+#
+# *********************
+# External Forcing Data
+# *********************
+ &EXF_NML_01
+#
+ useExfCheckRange  = .FALSE.,
+ repeatPeriod      = 31104000.,
+ exf_iprec         = 32,
+ exf_monFreq       = 2592000.,
+#useRelativeWind = .TRUE.,
+#
+ &
+
+# *********************
+ &EXF_NML_02
+# climsstperiod      = 0.0,
+# climsstTauRelax    = 2592000.,
+#
+# climsssperiod      = 0.0,
+#climsssTauRelax    = 2592000.,
+#
+ atempfile         = 'ESII_SO-RCSI100.L55_ctlv30_030W-era5_temperature.bin',
+ atempperiod       = 10800.,
+ atempstartdate1   = 00010101,
+ atempstartdate2   = 000000,
+#
+ aqhfile           = 'ESII_SO-RCSI100.L55_ctlv30_030W-era5_specific_humidity.bin',
+ aqhperiod         = 10800.,
+ aqhstartdate1     = 00010101,
+ aqhstartdate2     = 000000,
+#
+ uwindfile         = 'ESII_SO-RCSI100.L55_ctlv30_030W-era5_zonal_wind.bin',
+ uwindperiod       = 10800.,
+ uwindstartdate1   = 00010101,
+ uwindstartdate2   = 000000,
+#
+ vwindfile         = 'ESII_SO-RCSI100.L55_ctlv30_030W-era5_meridional_wind.bin',
+ vwindperiod       = 10800.,
+ vwindstartdate1   = 00010101,
+ vwindstartdate2   = 000000,
+#
+ precipfile        = 'ESII_SO-RCSI100.L55_ctlv30_030W-era5_precipitation.bin',
+ precipperiod      = 10800.,
+ precipstartdate1  = 00010101,
+ precipstartdate2  = 000000,
+#
+ lwdownfile        = 'ESII_SO-RCSI100.L55_ctlv30_030W-era5_downward_longwave.bin',
+ lwdownperiod      = 10800.,
+ lwdownstartdate1  = 00010101,
+ lwdownstartdate2  = 000000,
+#
+ swdownfile        = 'ESII_SO-RCSI100.L55_ctlv30_030W-era5_downward_shortwave.bin',
+ swdownperiod      = 10800.,
+ swdownstartdate1  = 00010101,
+ swdownstartdate2  = 000000,
+#
+ runofffile        = 'ESII_SO-RCSI100.L55_ctlv30_030W-input_only_zeros.bin',
+# runoffconst       = 0.0,
+# runoffperiod      = 31104000.,
+# runoffstartdate1  = 00010701,
+ runoffperiod      = 0.,
+ &
+
+# *********************
+ &EXF_NML_03
+#exf_offset_atemp=5;
+ &
+
+# *********************
+# old open64 compiler (4.2.1) cannot skip this namelist to read in the next one;
+# comment out this namelist (not read).
+#&EXF_NML_04
+#&
+
+# *********************
+ &EXF_NML_OBCS
+ &
+
+
