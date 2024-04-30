@@ -1,0 +1,199 @@
+{
+    "horizontal HT within ML": {
+        "at y=190": {
+            "total_mean": 20.32,
+            "total_std": 0.64,
+            "mean_mean": 37.47,
+            "mean_std": 1.06,
+            "transient_mean": -17.15,
+            "transient_std": 1.07,
+            "CME_mean": -4.2,
+            "CME_std": 0.32,
+            "CME_percent": 24.5
+        },
+        "at 15% ice": {
+            "total_mean": 6.2,
+            "total_std": 0.25,
+            "mean_mean": 13.82,
+            "mean_std": 0.53,
+            "transient_mean": -7.62,
+            "transient_std": 0.51,
+            "CME_mean": -1.72,
+            "CME_std": 0.11,
+            "CME_percent": 22.5
+        },
+        "at 80% ice": {
+            "total_mean": 3.77,
+            "total_std": 0.13,
+            "mean_mean": 5.84,
+            "mean_std": 0.25,
+            "transient_mean": -2.06,
+            "transient_std": 0.26,
+            "CME_mean": -0.5,
+            "CME_std": 0.04,
+            "CME_percent": 24.1
+        },
+        "at y=80": {
+            "total_mean": 1.87,
+            "total_std": 0.25,
+            "mean_mean": 1.96,
+            "mean_std": 0.17,
+            "transient_mean": -0.09,
+            "transient_std": 0.11,
+            "CME_mean": -0.09,
+            "CME_std": 0.03,
+            "CME_percent": 96.4
+        }
+    },
+    "horizontal HT below ML": {
+        "at y=190": {
+            "total_mean": -93.19,
+            "total_std": 8.16,
+            "mean_mean": -4.85,
+            "mean_std": 1.5,
+            "transient_mean": -88.34,
+            "transient_std": 7.92,
+            "CME_mean": -23.24,
+            "CME_std": 1.96,
+            "CME_percent": 26.3
+        },
+        "at 15% ice": {
+            "total_mean": -75.47,
+            "total_std": 7.38,
+            "mean_mean": -4.18,
+            "mean_std": 1.1,
+            "transient_mean": -71.29,
+            "transient_std": 6.89,
+            "CME_mean": -18.4,
+            "CME_std": 1.34,
+            "CME_percent": 25.8
+        },
+        "at 80% ice": {
+            "total_mean": -53.14,
+            "total_std": 6.32,
+            "mean_mean": -2.42,
+            "mean_std": 1.74,
+            "transient_mean": -50.71,
+            "transient_std": 5.64,
+            "CME_mean": -13.28,
+            "CME_std": 1.29,
+            "CME_percent": 26.2
+        },
+        "at y=80": {
+            "total_mean": -30.07,
+            "total_std": 4.97,
+            "mean_mean": -3.03,
+            "mean_std": 0.59,
+            "transient_mean": -27.04,
+            "transient_std": 4.67,
+            "CME_mean": -5.61,
+            "CME_std": 0.77,
+            "CME_percent": 20.7
+        }
+    },
+    "vertical across base of ML": {
+        "80% - 15% sea ice": {
+            "total_mean": 3.61,
+            "total_std": 0.27,
+            "mean_mean": 0.38,
+            "mean_std": 0.02,
+            "transient_mean": 3.24,
+            "transient_std": 0.27,
+            "CME_mean": 0.69,
+            "CME_std": 0.06,
+            "CME_percent": 21.5
+        },
+        "y=80 - 80% sea ice": {
+            "total_mean": 7.69,
+            "total_std": 0.3,
+            "mean_mean": 1.43,
+            "mean_std": 0.12,
+            "transient_mean": 6.26,
+            "transient_std": 0.19,
+            "CME_mean": 1.58,
+            "CME_std": 0.27,
+            "CME_percent": 25.2
+        },
+        "y=0 - y=80": {
+            "total_mean": 17.78,
+            "total_std": 2.38,
+            "mean_mean": 6.66,
+            "mean_std": 0.51,
+            "transient_mean": 11.12,
+            "transient_std": 2.2,
+            "CME_mean": 2.6,
+            "CME_std": 0.29,
+            "CME_percent": 23.4
+        }
+    },
+    "vertical diff. across base of ML": {
+        "80% - 15% sea ice": {
+            "total_mean": 6.21,
+            "total_std": 0.48,
+            "mean_mean": 6.43,
+            "mean_std": 0.43,
+            "transient_mean": -0.22,
+            "transient_std": 0.06,
+            "CME_mean": -0.09,
+            "CME_std": 0.03,
+            "CME_percent": 42.8
+        },
+        "y=80 - 80% sea ice": {
+            "total_mean": 10.37,
+            "total_std": 0.71,
+            "mean_mean": 10.25,
+            "mean_std": 0.59,
+            "transient_mean": 0.12,
+            "transient_std": 0.12,
+            "CME_mean": 0.04,
+            "CME_std": 0.05,
+            "CME_percent": 36.3
+        },
+        "y=0 - y=80": {
+            "total_mean": 8.61,
+            "total_std": 1.12,
+            "mean_mean": 8.58,
+            "mean_std": 1.11,
+            "transient_mean": 0.04,
+            "transient_std": 0.01,
+            "CME_mean": -0.05,
+            "CME_std": 0.04,
+            "CME_percent": -139.2
+        }
+    },
+    "vertical from ocean to ice": {
+        "80% - 15% sea ice": {
+            "total_mean": 4.92,
+            "total_std": 0.2,
+            "mean_mean": 2.74,
+            "mean_std": 0.07,
+            "transient_mean": 3.76,
+            "transient_std": 0.19,
+            "CME_mean": 0.9,
+            "CME_std": 0.04,
+            "CME_percent": 24.0
+        },
+        "y=80 - 80% sea ice": {
+            "total_mean": 4.23,
+            "total_std": 0.45,
+            "mean_mean": 2.65,
+            "mean_std": 0.22,
+            "transient_mean": 3.03,
+            "transient_std": 0.42,
+            "CME_mean": 0.77,
+            "CME_std": 0.05,
+            "CME_percent": 25.4
+        },
+        "y=0 - y=80": {
+            "total_mean": 4.11,
+            "total_std": 0.42,
+            "mean_mean": 3.22,
+            "mean_std": 0.45,
+            "transient_mean": 2.22,
+            "transient_std": 0.43,
+            "CME_mean": 0.45,
+            "CME_std": 0.06,
+            "CME_percent": 20.5
+        }
+    }
+}
